@@ -1,0 +1,14 @@
+[django]
+secret_key = USE_A_RANDOM_KEY_HERE
+debug_mode = YES
+cache_on = NO
+allowed_hosts = *
+
+[db]
+name = chatr
+user = chatr
+password = chatr
+host = 127.0.0.1
+port = 5432
+
+
