@@ -9,6 +9,13 @@
 
 * **This project uses Python 3 (specifically, 3.6+)** It will not
 work with Python 2.
+* To be clear, this project isn't meant as a tutorial for other
+people to learn django-channels and websockets.  *I'm* using it
+to learn these things myself.  If you want to use it to learn too,
+hey, that's great.  But I make no guarantees of it being proper,
+correct, or indeed functional or fit for any particular purpose.
+Your mileage may vary, offer void where prohibited by law, keep
+hands, arms, and legs inside the vehicle at all times, etc., etc.
 * This project uses `/home/pi` in various places (mostly in the `conf`
 directory's files, for `supervisor` and `nginx`) because I'm running
 this project on a Raspberry Pi.  You'll probably want to adjust this.
