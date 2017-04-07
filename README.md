@@ -16,7 +16,7 @@ hey, that's great.  But I make no guarantees of it being proper,
 correct, or indeed functional or fit for any particular purpose.
 Your mileage may vary, offer void where prohibited by law,
 *para su seguridad, permanezca sentado con las manos, brazos, pies,
-y piernas dentro el vehiculo*, etc., etc.
+y piernas dentro de vehiculo*, etc., etc.
 * This project uses `/home/pi` in various places (mostly in the `conf`
 directory's files, for `supervisor` and `nginx`) because I'm running
 this project on a Raspberry Pi.  You'll probably want to adjust this.
