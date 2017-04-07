@@ -35,7 +35,7 @@ to be. I do this by adding a hidden empty file in each directory called
 is ignored.  This works because git only adds *files* to its repos--
 it doesn't add *directories*.
 * I am using my own method of managing Django's `settings` module, using
-the `config` module, which reads the values from INI-style files.  This
+my own `config` module, which reads the values from INI-style files.  This
 works for me, and keeps things nice and tidy.  You can probably grok how
 it works by reading the `settings.py` file and the `site.ini_example` file.
 Feel free to use the `config` module in your own projects.
