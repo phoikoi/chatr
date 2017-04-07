@@ -18,5 +18,18 @@ probably add this in at some future point too.
 * Because I'm not using this on the actual internet (yet), I am not
 particularly doing things in a completely secure manner.  You need to
 pay attention to how to do things properly if you use it out in the wild.
-Have fun!
+* You might notice that I have the `static`, `media`, and `logs`
+directories in the git repo, but also listed in the `.gitignore` file.
+This is because their contents are site-specific and so shouldn't be
+in the repo (thus the entries in `.gitignore` but they do need to exist
+so that `nginx` and `supervisor` can access things where they expect them
+to be. I do this by adding a hidden empty file in each directory called
+`.gitkeep`, and these are added to the repo.  Anything else in the directory
+is ignored.  This works because git only adds *files* to its repos--
+it doesn't add *directories*.
+* I am using my own method of managing Django's `settings` module, using
+the `config` module, which reads the values from INI-style files.  This
+works for me, and keeps things nice and tidy.  You can probably grok how
+it works by reading the `settings.py` file and the `site.ini_example` file.
+Feel free to use the `config` module in your own projects.
 
