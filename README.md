@@ -7,6 +7,8 @@
 
 ### Notes
 
+* **This project uses Python 3 (specifically, 3.6+)** It will not
+work with Python 2.
 * This project uses `/home/pi` in various places (mostly in the `conf`
 directory's files, for `supervisor` and `nginx`) because I'm running
 this project on a Raspberry Pi.  You'll probably want to adjust this.
