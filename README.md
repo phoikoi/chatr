@@ -7,10 +7,14 @@
 
 ### Notes
 
-* **This project uses Python 3 (specifically, 3.6+)** It will not
-work with Python 2.
+* **This project uses Python 3 (specifically, 3.6+).** It will not
+work with Python 2. I personally like to use
+[pyenv-installer](https://github.com/pyenv/pyenv-installer) to manage
+the python environment for the project to run in; this keeps the
+environment cleanly separated from its host system's libraries
+and modules.
 * To be clear, this project isn't meant as a tutorial for other
-people to learn django-channels and websockets.  *I'm* using it
+people to learn django-channels and websockets.  I'm using it
 to learn these things myself.  If you want to use it to learn too,
 hey, that's great.  But I make no guarantees of it being proper,
 correct, or indeed functional or fit for any particular purpose.
