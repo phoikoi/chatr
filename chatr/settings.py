@@ -24,7 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'channels',
-    'base',
+    'base.apps.BaseConfig',
+    'amtrak.apps.AmtrakConfig',
 ]
 
 MIDDLEWARE = [
