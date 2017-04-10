@@ -3,6 +3,7 @@ from django.utils.timezone import now
 from pydoc import locate
 from croniter import croniter
 from datetime import datetime
+from base.utils import yell
 
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -23,6 +24,7 @@ class ClockListener(BaseModel):
     def run(self):
         self.last_run = now()
         self.save()
+        yell(f"ClockListener {self.id} \"{self.cron_spec}\" {self.target_object} in run()")
         locate(self.target_object)()
 
 def run_clock_listeners(**kwargs):

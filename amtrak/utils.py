@@ -1,5 +1,6 @@
 import sys
 from django.utils.timezone import now
+from base.utils import yell
 
 def clock_tick():
-    sys.stdout.write(f"{str(now())}\n")
+    yell(f"{str(now())}")
