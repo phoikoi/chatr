@@ -8,3 +8,4 @@ class ClockWatcher:
 def yell(message):
     if settings.DEBUG:
         sys.stdout.write(f"{str(now())} {message}\n")
+        sys.stdout.flush()
