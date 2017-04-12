@@ -3,4 +3,4 @@ from .utils import ClockWatcher
 import sys
 
 def ticktock(message):
-    TickTock.send(ClockWatcher)
+    TickTock.send(None)
