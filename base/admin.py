@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import ClockListener
 
-# Register your models here.
+class ClockListenerAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(ClockListener, ClockListenerAdmin)
