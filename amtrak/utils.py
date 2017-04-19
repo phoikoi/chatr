@@ -1,2 +1,6 @@
+from base.utils import clocklistener, yell
+import sys
+
+@clocklistener('*/5 * * * *')
 def clock_tick():
-    pass
+    yell('clock_tick running')
