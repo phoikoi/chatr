@@ -4,3 +4,6 @@ from base.signals import TickTock
 
 class AmtrakConfig(AppConfig):
     name = 'amtrak'
+
+    def ready(self):
+        import amtrak.utils # connect clocklisteners
