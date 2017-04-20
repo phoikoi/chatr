@@ -8,6 +8,8 @@ from pydoc import locate
 from croniter import croniter
 from datetime import datetime
 
+namestr = lambda x:f"{x.__module__}.{x.__name__}"
+
 def yell(message):
     if settings.DEBUG:
         t = now().strftime('%Y%m%d_%H%M%S_%Z')
@@ -22,30 +24,29 @@ def fullname(o):
     return module + '.' + o.__class__.__name__
 
 def clocklistener(cron_spec):
-    _cronspec = cron_spec
-    _basetime = now()
-    yell(f"Entering clocklistener: cronspec _basetime")
+    yell("Entering clocklistener")
     def decorator(func):
         yell("Entering decorator")
+        _basetime = now()
 #        @wraps(func)
         def wrapper(**kwargs):
             yell("Entering wrapper")
-            nonlocal _cronspec
+            nonlocal cron_spec
             nonlocal _basetime
-            yell(f"wrapper: nonlocal _cronspec is {_cronspec}")
+            yell(f"wrapper: nonlocal _cronspec is {cron_spec}")
             yell(f"wrapper: nonlocal _basetime is {str(_basetime)}")
-            next_run = croniter(_cronspec, _basetime).get_next(datetime)
+            next_run = croniter(cron_spec, _basetime).get_next(datetime)
             yell(f"wrapper: next_run is {str(next_run)}")
             curtime = now()
             if next_run <= curtime:
                 _basetime = curtime
-                yell("About to execute func {fullname(func)}")
+                yell(f"About to execute func {namestr(func)}")
                 return func()
             else:
-                yell("Not executing func")
+                yell(f"Not executing func {namestr(func)}")
                 return None
-        yell("About to connect TickTock for {fullname(func)}")
-        TickTock.connect(wrapper, dispatch_uid=fullname(func))
+        yell(f"About to connect TickTock for {namestr(func)}")
+        TickTock.connect(wrapper, dispatch_uid=namestr(func))
         yell("About to return wrapper")
         return wrapper
     yell("About to return decorator")
